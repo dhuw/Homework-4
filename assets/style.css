@@ -24,7 +24,7 @@ h2{
     font-size: 4rem;
     margin-bottom: 4.5rem;
 }
-/* making container take up 1005 of vp HxW */
+/* making container take up 100% of vp HxW */
 .container {
     width: 100vw;
     height: 100vh;

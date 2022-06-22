@@ -8,6 +8,36 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div id="game" class="justify-center">
+            <div id="hud">
+                <div class="hud-item">
+                    <!-- container desc -->
+                    <p id="containerText" class="hud-prefix">
+                        Question:
+                    </p>
+                    <!-- timer function -->
+                    <div id="timer">
+
+                    </div>
+                    <!-- end of timer -->
+                </div>
+                <div class="hud-item">
+                    <p class="hud-prefix">
+                        Score:
+                    </p>
+                    <h1 class="hud-main-text" id="score">
+                        0
+                    </h1>
+                </div>
+            </div>
+            <div id="question">What is the answer?</div>
+            <!-- making possible answers to given question -->
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="1">Choice 1</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
