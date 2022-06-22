@@ -1,0 +1,47 @@
+body {
+    color: var(--accent-color);
+}
+/* making border and selecting color for border around potential answers */
+.choice-container {
+    display: flex;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    border-radius: 4px;
+    color: var(--accent-color);
+    border: var(--accent-color) 4px solid;
+    font-size: 3rem;
+    min-width: 80rem;
+
+}
+/* hover effect on answer boxes */
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--accent-color);
+    transform: scale(1.03);
+}
+/* stlying for letter designation of potential answers */
+.choice-prefix {
+    padding: 2rem 2.5rem;
+    color: var(--accent-color);
+}
+
+.choice-text {
+    padding: 2rem;
+    width: 100%;
+}
+/* will change correct answer color to darker green */
+.correct {
+    background-color: green;
+    border: green 4px solid;
+}
+/* will change wrong answer color to red */
+.wrong {
+    background-color: red;
+    border: red 4px solid;
+}
+/* making webpage dynamic */
+@media screen and (max-width: 768px) {
+    .choice-container {
+        min-width: 40rem;
+    }
+}
