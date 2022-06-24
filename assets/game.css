@@ -39,6 +39,27 @@ body {
     background-color: red;
     border: red 4px solid;
 }
+/* hud element styling */
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix {
+    text-align: center;
+    font-size: 2rem;
+}
+
+#container-text {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.hud-main-text {
+    text-align: center;
+}
+
+
 /* making webpage dynamic */
 @media screen and (max-width: 768px) {
     .choice-container {
