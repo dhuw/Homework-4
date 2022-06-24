@@ -103,3 +103,72 @@ let questions = [
     },
     // question 10 ^^^^
 ]
+console.log(questions)
+
+//start game functionality and needed var
+const SCORE_POINTS = 100;
+const MAX_QUESTIONS = 10;
+
+startGame = () => {
+    questionCounter = 0
+    score = 0
+    availableQustions = [...questions]
+    getNewQuestion()
+}
+
+//get new question function supplies new q when previous gets answered
+getNewQuestion = () => {
+    if(availableQustions.length === 0 || questionCounter > MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score)
+
+        return window.location.assign('/end.html')
+    }
+
+    questionCounter++
+
+    //making random question appear
+    const questionIndex = Math.floor(Math.random() * availableQustions.length)
+    currentQuestion = availableQustions[questionIndex]
+    question.innerHTML = currentQuestion.question
+
+    choices.array.forEach(choice => {
+        const number = choice.dataset['number']
+        choice.innerText = currentQuestion['choice' + number]
+    });
+
+    availableQustions.splice(questionIndex, 1);
+
+    acceptingAnswers = true;
+}
+
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+        if (!acceptingAnswers) return
+
+        acceptingAnswers = false
+        const selectedChoice = e.target
+        const selectedAnswer = selectedChoice.dataset['number']
+
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+        //if answer is correct add 100 to score
+        if (classToApply === 'correct') {
+            incrementScore(SCORE_POINTS)
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply)
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply)
+            getNewQuestion();
+        }, 1000)
+    })
+})
+
+//increment score funt and calling start game
+incrementScore = num => {
+    score += num
+    scoreText.innerText = score
+}
+
+startGame();
+
