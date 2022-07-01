@@ -30,13 +30,13 @@ body {
 }
 /* will change correct answer color to darker green */
 .correct {
-    box-shadow: 0 0 10px green;
-    border: green 4px solid;
+    box-shadow: 0 0 10px var(--correct);
+    border: var(--correct) 4px solid;
 }
 /* will change wrong answer color to red */
 .incorrect {
-    box-shadow: 0 0 10px red;
-    border: red 4px solid;
+    box-shadow: 0 0 10px var(--incorrect);
+    border: var(--incorrect) 4px solid;
 }
 /* hud element styling */
 #hud {
