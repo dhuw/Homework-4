@@ -1,4 +1,4 @@
-/* setting color var */
+ /* setting color var */
 :root {
     --bg-color: rgb(41, 35, 51);
     --text-color: rgb(223, 223, 223);
@@ -13,7 +13,7 @@
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-}
+} */
 /* styling for h1 and h2 */
 h1 {
   font-size: 6rem;
@@ -23,7 +23,7 @@ h1 {
 h2{
     font-size: 4rem;
     margin-bottom: 4.5rem;
-}
+} 
 /* making container take up 100% of vp HxW */
 .container {
     width: 100vw;
@@ -34,7 +34,7 @@ h2{
     max-width: 80rem;
     margin: 0 auto;
     padding: 2rem;
-}
+} */
 /* defing classes to put on other tags */
 .flex-column {
     display: flex;
@@ -56,7 +56,7 @@ h2{
 
 .hidden {
     display: none;
-}
+} 
 /* btn */
 .btn {
     font-size: 2.5rem;
@@ -74,3 +74,4 @@ h2{
     box-shadow: 0 0 10px var(--accent-color);
     transform: scale(1.03);
 }
+

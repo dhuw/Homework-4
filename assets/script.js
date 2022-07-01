@@ -1,6 +1,6 @@
 //defining global var  for dom manipulation for q, choices, and score text
-const question = $('#question');
-const choices = $('.choice-text');
+const question = document.getElementById('question');
+const choices = Array.from($('.choice-text'));
 const scoreText = $('#score');
 
 //defining let var which values will change throughout the game
@@ -18,7 +18,7 @@ let questions = [
         choice2: 'let',
         choice3: 'const',
         choice4: 'all of the above',
-        answer: 'all of the above'
+        answer: '4'
     },
     // question 1 ^^^^
     {
@@ -27,7 +27,7 @@ let questions = [
         choice2: 'localStorage.setItem()',
         choice3: 'localStorage.store()',
         choice4: 'localStorage.setLocal()',
-        answer: 'localStorage.setItem()'
+        answer: '2'
     },
     // question 2 ^^^^
     {
@@ -36,7 +36,7 @@ let questions = [
         choice2: '<jscript>',
         choice3: '<scripting>',
         choice4: '<javascript>',
-        answer: '<script>'
+        answer: '1'
     },
     // question 3 ^^^^
     {
@@ -45,7 +45,7 @@ let questions = [
         choice2: '(p).innerHTML = "Hello World',
         choice3: 'getElement("p").value = "Hello World',
         choice4: 'document("p").innerHTML = "Hello World',
-        answer: 'document.getElement("p").innerHTML = "Hello World'
+        answer: '1'
     },
     // question 4 ^^^^
     {
@@ -54,7 +54,7 @@ let questions = [
         choice2: 'message("Hello World");',
         choice3: 'alertBox("Hello World");',
         choice4: 'alert("Hello World");',
-        answer: 'alert("Hello World");'
+        answer: '4'
     },
     // question 5 ^^^^
     {
@@ -63,7 +63,7 @@ let questions = [
         choice2: 'function = myFunction()',
         choice3: 'function myFunction()',
         choice4: 'var function.value() = myFunction()',
-        answer: 'function myFunction()'
+        answer: '3'
     },
     // question 6 ^^^^
     {
@@ -72,7 +72,7 @@ let questions = [
         choice2: 'if (i == 5)',
         choice3: 'if i == 5 then',
         choice4: 'if i = 5',
-        answer: 'if (i == 5)'
+        answer: '2'
     },
     // question 7 ^^^^
     {
@@ -81,7 +81,7 @@ let questions = [
         choice2: '<!--example-->',
         choice3: '//example',
         choice4: '`example`',
-        answer: '//example'
+        answer: '3'
     },
     // question 8 ^^^^
     {
@@ -90,7 +90,7 @@ let questions = [
         choice2: 'var colors = ("red", "green", "blue")',
         choice3: 'var colors = {"red", "green", "blue"}',
         choice4: 'var colors = "red", "green", "blue"',
-        answer: 'var colors = ["red", "green", "blue"]'
+        answer: '1'
     },
     // question 9 ^^^^
     {
@@ -99,21 +99,21 @@ let questions = [
         choice2: 'Server',
         choice3: 'Both',
         choice4: 'None',
-        answer: 'Both'
+        answer: '3'
     },
     // question 10 ^^^^
 ]
-console.log(questions)
+
 
 //start game functionality and needed var
 const SCORE_POINTS = 100;
 const MAX_QUESTIONS = 10;
 
 startGame = () => {
-    questionCounter = 0
-    score = 0
-    availableQustions = [...questions]
-    getNewQuestion()
+    questionCounter = 0;
+    score = 0;
+    availableQustions = [...questions];
+    getNewQuestion();
 }
 
 //get new question function supplies new q when previous gets answered
@@ -129,11 +129,11 @@ getNewQuestion = () => {
     //making random question appear
     const questionIndex = Math.floor(Math.random() * availableQustions.length)
     currentQuestion = availableQustions[questionIndex]
-    question.innerHTML = currentQuestion.question
-
-    choices.array.forEach(choice => {
-        const number = choice.dataset['number']
-        choice.innerText = currentQuestion['choice' + number]
+    question.innerText = currentQuestion.question
+    //was originally choices.array.forEach
+    choices.forEach((choice)=> {
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number];
     });
 
     availableQustions.splice(questionIndex, 1);
@@ -162,7 +162,7 @@ choices.forEach(choice => {
             getNewQuestion();
         }, 1000)
     })
-})
+});
 
 //increment score funt and calling start game
 incrementScore = num => {
