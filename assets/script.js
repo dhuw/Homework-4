@@ -42,9 +42,9 @@ let questions = [
     {
         question: 'What is the correct JavaScript syntax to change the content of a <p> in HTML document?',
         choice1: 'document.getElement("p").innerHTML = "Hello World"',
-        choice2: '(p).innerHTML = "Hello World',
-        choice3: 'getElement("p").value = "Hello World',
-        choice4: 'document("p").innerHTML = "Hello World',
+        choice2: '(p).innerHTML = "Hello World"',
+        choice3: 'getElement("p").value = "Hello World"',
+        choice4: 'document("p").innerHTML = "Hello World"',
         answer: '1'
     },
     // question 4 ^^^^
@@ -121,7 +121,7 @@ getNewQuestion = () => {
     if(availableQustions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
-        return window.location.assign('/end.html')
+        return window.location.assign('./end.html')
     }
 
     questionCounter++
@@ -153,6 +153,9 @@ choices.forEach(choice => {
         //if answer is correct add 100 to score
         if (classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
+        } else {
+            //timer time will be subtracted by 10 if question is answered incorrectly
+            timerSec -= 10;
         }
 
         selectedChoice.parentElement.classList.add(classToApply)
@@ -172,11 +175,24 @@ incrementScore = num => {
 
 startGame();
 
-console.log(score)
 
-//TODO: score counter isnt working
-//potential cause for score counter:
-//increment score func
-//if classToApply === "correct" then incrememnt(SCORE_POINTS)
-//TODO: need to add timer function
 
+//timer funct for 90 sec
+var timerSec = 90;
+var timerText = document.getElementById('time-text')
+var timer;
+
+timer = setInterval(function() {
+    timerSec--;
+    timerText.textContent = timerSec
+    //if timer is less than or = to 0 the game will end
+    if (timerSec <= 0) {
+        clearInterval(timer);
+        return window.location.assign('./end.html');
+    //if there is no available q's and the timer is greater than 0 game will end
+    }if (availableQustions === 0 && timerSec > 0) {
+        clearInterval(timer);
+        return window.location.assign('./end.html');
+        }
+
+},1000)
