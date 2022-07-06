@@ -77,4 +77,38 @@ h2 {
     box-shadow: 0 0 10px var(--accent-color);
     transform: scale(1.03);
 }
+/* styling for end.html */
+#end-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 20rem;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+input::placeholder {
+    color: var(--accent-color);
+}
+
+#username {
+    margin-bottom: 3rem;
+    width: 100%;
+    outline: none;
+}
+
+#end-text {
+    font: 2.5rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
 
