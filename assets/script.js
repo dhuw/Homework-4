@@ -1,7 +1,7 @@
 //defining global var  for dom manipulation for q, choices, and score text
 const question = document.getElementById('question');
 const choices = Array.from($('.choice-text'));
-const scoreText = $('#score');
+const scoreText = document.getElementById('score');
 
 //defining let var which values will change throughout the game
 let currentQuestion = {};
@@ -41,7 +41,7 @@ let questions = [
     // question 3 ^^^^
     {
         question: 'What is the correct JavaScript syntax to change the content of a <p> in HTML document?',
-        choice1: 'document.getElement("p").innerHTML = "Hello World',
+        choice1: 'document.getElement("p").innerHTML = "Hello World"',
         choice2: '(p).innerHTML = "Hello World',
         choice3: 'getElement("p").value = "Hello World',
         choice4: 'document("p").innerHTML = "Hello World',
@@ -166,8 +166,8 @@ choices.forEach(choice => {
 
 //increment score funt and calling start game
 incrementScore = num => {
-    score += num
-    scoreText.value = score
+    score +=num
+    scoreText.innerText = score
 }
 
 startGame();
