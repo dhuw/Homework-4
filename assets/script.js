@@ -167,8 +167,16 @@ choices.forEach(choice => {
 //increment score funt and calling start game
 incrementScore = num => {
     score += num
-    scoreText.innerText = score
+    scoreText.value = score
 }
 
 startGame();
+
+console.log(score)
+
+//TODO: score counter isnt working
+//potential cause for score counter:
+//increment score func
+//if classToApply === "correct" then incrememnt(SCORE_POINTS)
+//TODO: need to add timer function
 
