@@ -92,11 +92,13 @@ input {
     padding: 1.5rem;
     font-size: 1.8rem;
     border: none;
-    box-shadow: 0 0 10px var(--accent-color);
+    background-color: var(--text-color);
+    color: #000 ;
+
 }
 
 input::placeholder {
-    color: var(--accent-color);
+    color: var(#000);
 }
 
 #username {
