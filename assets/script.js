@@ -1,4 +1,3 @@
-//defining global var  for dom manipulation for q, choices, and score text
 const question = document.getElementById('question');
 const choices = Array.from($('.choice-text'));
 const scoreText = document.getElementById('score');

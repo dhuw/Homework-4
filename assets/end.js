@@ -1,20 +1,19 @@
-//defining const var for js file
-const username = $('#username')
-const saveScoreBtn = $('#save-score-btn')
-const finalScore = $('#final-score')
+const username = document.querySelector('#username')
+const saveScoreBtn = document.querySelector('#save-score-btn')
+const finalScore = document.querySelector('#final-score')
 const mostRecentScore = localStorage.getItem('most-recent-score')
-//const for local storage
-const highscores = JSON.parse(localStorage.getItem('highScores')) || []
 
-const MAX_HIGH_SCORES = 1000
-//making local storage = page text
+const highScores = JSON.parse(localStorage.getItem('highScores')) || []
+
+const MAX_HIGH_SCORES = 5
+
 finalScore.innerText = mostRecentScore
 
 username.addEventListener('keyup', () => {
     saveScoreBtn.disabled = !username.value
 })
 
-saveHighscore = e => {
+saveHighScore = e => {
     e.preventDefault()
 
     const score = {
@@ -31,9 +30,7 @@ saveHighscore = e => {
     highScores.splice(10)
 
     localStorage.setItem('highScores', JSON.stringify(highScores))
-    window.location.assign('/')
+    window.location.assign('./highscores.html')
 
-    
 }
-
 //moment js 1h 1m 23sec countdown
