@@ -17,5 +17,5 @@ This is a timed quiz game, the user will start on the home page where they have 
 
 Repo:
 - https://github.com/dhuw/Homework-4
-Page:
-- example.com
+</br>Page:
+- https://dhuw.github.io/Homework-4/
