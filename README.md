@@ -11,7 +11,13 @@ This is a timed quiz game, the user will start on the home page where they have 
 
 ## Picture of deployed website
 
-*image goes here*
+![hw4-index](https://user-images.githubusercontent.com/101857547/178116086-f2e25e22-5022-4dbf-9f44-bb31a3e86bdf.PNG)
+![h4gamedesktop](https://user-images.githubusercontent.com/101857547/178116095-0b729c3e-b968-4ecc-be12-aaf4d62dfcef.PNG)
+![hw4gametab](https://user-images.githubusercontent.com/101857547/178116102-dd9eacde-0da8-4406-99be-c3cf8f716503.PNG)
+![hw4gamemobile](https://user-images.githubusercontent.com/101857547/178116105-f4a0bbdb-56c6-48e7-a770-06f7d43593af.PNG)
+![hw4end](https://user-images.githubusercontent.com/101857547/178116108-7a2f06ef-b3d7-4711-a546-0b532a0c3c26.PNG)
+![hw4highscores](https://user-images.githubusercontent.com/101857547/178116111-693b4489-c157-4c87-a7b5-dceefe684c9c.PNG)
+
 
 ## Deployed Pages and Links
 
