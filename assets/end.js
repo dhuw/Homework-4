@@ -7,7 +7,7 @@ const highScores = JSON.parse(localStorage.getItem('highScores')) || []
 
 const MAX_HIGH_SCORES = 1000
 
-finalScore.innerText = mostRecentScore
+finalScore.innerHTML = mostRecentScore
 
 
 saveHighScore = e => {
